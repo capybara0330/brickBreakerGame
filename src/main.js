@@ -1,26 +1,28 @@
 import "./style.css";
 import Block from "./model/block.js";
+import Sprite from "./model/sprite.js";
 
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
 const redBlock = new Block(20, 40, 50, 50, "#FF0000");
 
-let x = canvas.width/2;
-let y = canvas.height-30;
-const dx = 2;
-const dy = -2;
+const blueSprite = new Sprite(
+    canvas.width/2,
+    canvas.height - 30,
+    10,
+    10,
+    "#0095DD",
+    2,
+    -2
+);
 
 function draw(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
     redBlock.draw(ctx);
-    ctx.beginPath();
-    ctx.rect(x, y, 10, 10);
-    ctx.fillStyle = "#0095DD";
-    ctx.fill();
-    ctx.closePath();
-    x += dx;
-    y += dy;
+    blueSprite.draw(ctx);
+    blueSprite.move();
 
     window.requestAnimationFrame(draw);
 }
