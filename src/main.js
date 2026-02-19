@@ -31,7 +31,7 @@ function draw(){
     ball.bounce(canvas.width, canvas.height);
 
     paddle.draw(ctx);
-    paddle.move();
+    paddle.move(canvas.width);
 
     window.requestAnimationFrame(draw);
 }

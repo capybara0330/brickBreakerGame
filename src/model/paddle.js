@@ -23,6 +23,15 @@ class Paddle extends Sprite{
             this.dx = 0;
         }
     }
+
+    move(canvasWidth){
+        super.move();
+        if(this.x < 0){
+            this.x = 0;
+        }else if(this.x + this.width > canvasWidth){
+            this.x = canvasWidth - this.width;
+        }
+    }
 }
 
 export default Paddle;
