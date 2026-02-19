@@ -1,13 +1,10 @@
 import "./style.css";
-import Block from "./model/block.js";
-import Sprite from "./model/sprite.js";
+import Ball from "./model/ball.js"
 
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
-const redBlock = new Block(20, 40, 50, 50, "#FF0000");
-
-const blueSprite = new Sprite(
+const ball = new Ball(
     canvas.width/2,
     canvas.height - 30,
     10,
@@ -19,10 +16,10 @@ const blueSprite = new Sprite(
 
 function draw(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    redBlock.draw(ctx);
-    blueSprite.draw(ctx);
-    blueSprite.move();
+
+    ball.draw(ctx);
+    ball.move();
+    ball.bounce(canvas.width, canvas.height);
 
     window.requestAnimationFrame(draw);
 }
