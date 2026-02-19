@@ -15,3 +15,5 @@ class Block{
         ctx.closePath();
     }
 }
+
+export default Block;
