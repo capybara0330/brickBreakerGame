@@ -42,9 +42,15 @@ const paddle = new Paddle(
     "#0095DD",
 );
 
+let score = 0;
+
 let isGameOver = false;
 function draw(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#0095DD";
+    ctx.fillText("Score: " + score, 8, 20);
 
     ball.draw(ctx);
     ball.move();
@@ -55,7 +61,9 @@ function draw(){
 
     bricks.forEach((brick) => {
         brick.draw(ctx);
-        brick.collides(ball);
+        if(brick.collides(ball)){
+            score++;
+        }
     })
 
     ball.collides(paddle);

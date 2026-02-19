@@ -16,7 +16,9 @@ class Brick extends Block{
         if(this.visible && this.intersects(ball)){
             this.visible = false;
             ball.collides(this);
+            return true;
         }
+        return false;
     }
 }
 
