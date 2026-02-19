@@ -10,9 +10,12 @@ class Ball extends Sprite{
             this.dx *= -1;
         }
 
-        if(this.y < 0 || this.y + this.height > canvasHeight){
+        if(this.y < 0){
             this.dy *= -1;
+        }else if(this.y + this.height > canvasHeight){
+            return false
         }
+        return true
     }
 
     collides(other){
