@@ -6,15 +6,11 @@ class Ball extends Sprite{
     }
 
     bounce(canvasWidth, canvasHeight){
-        if(this.x < 0){
-            this.dx *= -1;
-        }else if(this.x > canvasWidth){
+        if(this.x < 0 || this.x + this.width > canvasWidth){
             this.dx *= -1;
         }
 
-        if(this.y < 0){
-            this.dy *= -1;
-        }else if(this.y > canvasHeight){
+        if(this.y < 0 || this.y + this.height > canvasHeight){
             this.dy *= -1;
         }
     }
