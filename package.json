@@ -1,0 +1,16 @@
+{
+  "name": "brick-breaker",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prettier": "prettier --write \"src/**/*.js\" --config \".prettierrc.json\""
+  },
+  "devDependencies": {
+    "prettier": "3.8.1",
+    "vite": "^7.2.4"
+  }
+}
